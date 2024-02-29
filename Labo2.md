@@ -1,8 +1,7 @@
 # Labo2-Groupe32
 
-# 2 Calculs de sécurité théorique
+## 2 Calculs de sécurité théorique
 
-## Question 2.1
 
 ### Question 2.1
 Exactement 1 caractère numérique ?
@@ -53,17 +52,11 @@ Toujours avec la même base, combien de temps faudra-t-il « au maximum » pour 
 ### Question 2.16
 Combien de temps faudra-t-il « en moyenne » pour casser un mot de passe de la question 2.12 ?
 
-
-## Question 2.2
-
 ### Question 2.17
 En considérant des attaques « hors ligne », décrire trois manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
 
 ### Question 2.18
 En considérant des attaques « en ligne », décrire deux manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
-
-
-## Question 2.3
 
 ### Question 2.19
 Les mots de passe ne sont pas stockés en clair, pourquoi ?
@@ -73,3 +66,12 @@ Les mots de passe ne sont pas stockés en clair, mais pourtant ils ne sont pas c
 
 ### Question 2.21
 Sous quelle forme sont stockés les mots de passe ?
+
+
+
+## 3 Identification des empreintes des mots de passe
+
+### Question 3.1
+Quel est le type d’empreintes contenues dans les deux fichiers mentionnés ci-dessus ?
+Sur quels arguments basez-vous votre réponse (capture d’écran, explications et
+justifications) ?
