@@ -118,9 +118,12 @@ Parce que les stockés en clair permettrait à un attaquant de les récupérer s
 ### Question 2.20
 Les mots de passe ne sont pas stockés en clair, mais pourtant ils ne sont pas chiffrés, pourquoi ?
 
+L'opération de chiffrage est (par définition) bi-directionnelle, ce qui indique qu'il est possible de retrouver le mot de passe en clair si un attaquant parvient a obtenir la clef d'encryption.
+
 ### Question 2.21
 Sous quelle forme sont stockés les mots de passe ?
 
+Ils sont stockés sous forme hashée, une opération cryptographique à sens unique (il est très complexe d'effectuer l'opération dans le sens inverse).
 
 ## 3 Identification des empreintes des mots de passe
 
@@ -128,6 +131,7 @@ Sous quelle forme sont stockés les mots de passe ?
 Quel est le type d’empreintes contenues dans les deux fichiers mentionnés ci-dessus ?
 Sur quels arguments basez-vous votre réponse (capture d’écran, explications et
 justifications) ?
+
 
 
 ## 4 Hashcat
