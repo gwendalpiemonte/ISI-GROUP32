@@ -33,13 +33,13 @@ Exactement 1 caractère alphanumérique (non sensible à la casse) ?
 ### Question 2.6
 Exactement 8 caractères alphanumériques (non sensible à la casse) ?
 
-$26^8$
+$26^8 $
 
 ### Question 2.7
 Entre 0 et 8 caractères alphanumériques (non sensible à la casse) ?
 
 $$
-\sum_{i = 0}^{8} 26^i 
+\sum_{i = 0}^{8} 26^i \approx 2^{38}
 $$
 
 ### Question 2.8
@@ -74,7 +74,7 @@ $$
 Exactement 8 caractères ASCII ?
 
 $$
-8 * 2^7
+2^{7*8} = 2^{56}
 $$
 
 ### Question 2.13
@@ -87,25 +87,33 @@ $$
 ### Question 2.14
 Combien de temps faudra-t-il « en moyenne » pour casser un mot de passe de la question 2.6 ?
 
-
+Il faut donc $1/2$ jours "en moyenne"
 
 ### Question 2.15
 
 Toujours avec la même base, combien de temps faudra-t-il « au maximum » pour casser un mot de passe de la question 2.12 ?
 
+Cela correspond à $24^8= 110 075 314 176$ heures, ou $24^7=4'586'471'424$ jours, ou encore $12'557'074$ années
+
 ### Question 2.16
 Combien de temps faudra-t-il « en moyenne » pour casser un mot de passe de la question 2.12 ?
+
+$\frac{12'557'074}{2} = 6'278'537$ années
 
 ### Question 2.17
 En considérant des attaques « hors ligne », décrire trois manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
 
+Il est nécessaire de rajouter des salts pour réduire la vitesse de l'attaquant, ou incorposer une clef d'encryption supplémentaire, chargée a l'execution. Cela permets encore de réduire les risques. Choisir le facteur de difficulté (nb d'itérations) tel que l'expérience utilisateur n'est pas impactée, mais il n'est pas instantané côté serveur (target souvent choisie à `500ms`)
+
 ### Question 2.18
 En considérant des attaques « en ligne », décrire deux manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
+
+Mettre en place un ratelimiting, s'assurer que les opérations cryptographiques sont en "temps-constant", et bloquer après un certain nombre de tentatives sur une IP.
 
 ### Question 2.19
 Les mots de passe ne sont pas stockés en clair, pourquoi ?
 
-Parce que les stockés en claire permettrait à un attaquant de les récupérer s'il a accès à l'emplacement où ils sont stockés. Ce qui lui permet par la suite d'accéder directement au service sécurisé par le mot de passe (notion de persistance).
+Parce que les stockés en clair permettrait à un attaquant de les récupérer s'il a accès à l'emplacement où ils sont stockés. Ce qui lui permet par la suite d'accéder directement au service sécurisé par le mot de passe (notion de persistance).
 
 ### Question 2.20
 Les mots de passe ne sont pas stockés en clair, mais pourtant ils ne sont pas chiffrés, pourquoi ?
