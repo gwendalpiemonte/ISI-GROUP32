@@ -40,8 +40,12 @@ Entre 0 et 8 caractères alphanumériques (sensible à la casse) ?
 ### Question 2.11
 Exactement 1 caractère ASCII (7 bits) ?
 
+2^7
+
 ### Question 2.12
 Exactement 8 caractères ASCII ?
+
+8 * 2^7
 
 ### Question 2.13
 Entre 0 et 8 caractères ASCII ?
@@ -64,6 +68,8 @@ En considérant des attaques « en ligne », décrire deux manières de freiner 
 
 ### Question 2.19
 Les mots de passe ne sont pas stockés en clair, pourquoi ?
+
+Parce que les stockés en claire permettrait à un attaquant de les récupérer s'il a accès à l'emplacement où ils sont stockés. Ce qui lui permet par la suite d'accéder directement au service sécurisé par le mot de passe (notion de persistance).
 
 ### Question 2.20
 Les mots de passe ne sont pas stockés en clair, mais pourtant ils ne sont pas chiffrés, pourquoi ?
