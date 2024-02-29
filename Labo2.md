@@ -72,10 +72,90 @@ Les mots de passe ne sont pas stockés en clair, mais pourtant ils ne sont pas c
 Sous quelle forme sont stockés les mots de passe ?
 
 
-
 ## 3 Identification des empreintes des mots de passe
 
 ### Question 3.1
 Quel est le type d’empreintes contenues dans les deux fichiers mentionnés ci-dessus ?
 Sur quels arguments basez-vous votre réponse (capture d’écran, explications et
 justifications) ?
+
+
+## 4 Hashcat
+
+### Manipulation 4.1
+Extraire le dictionnaire rockyou.txt de l’archive /usr/share/wordlists/rockyou.txt.gz.
+
+### Question 4.1
+Quelle doit être la valeur de l’option -m pour les deux fichiers ?
+
+### Question 4.2
+Quels sont les différents modes d’attaque de hashcat ? Expliquer brièvement leur
+fonctionnement ainsi que les arguments nécessaires pour utiliser ces modes.
+
+### Question 4.3
+Quel est le mode d’attaque par défaut ?
+
+### Manipulation 4.2
+Lancer hashcat avec le mode d’attaque par défaut sur le fichier XPHash.txt, puis sur
+le fichier KALIHash.txt. Noter les commandes et le résultat obtenu.
+
+### Question 4.4
+Qu’est-ce qu’un masque ? Avec quel(s) mode(s) l’utilise-t-on ?
+
+### Question 4.5
+Quels sont les alphabets (charsets) prédéfinis ?
+
+### Question 4.6
+Quels sont les alphabets et le masque utilisés par défaut pour le bruteforce ?
+
+### Manipulation 4.3
+Lancer hashcat en mode bruteforce avec la configuration par défaut. Noter la
+commande et le résultat obtenu.
+
+### Question 4.7
+Quelle(s) option(s) permet(tent) de tester différentes longueurs pendant le bruteforce ?
+
+### Question 4.8
+Quelle option permet de définir un nouvel alphabet ?
+
+### Manipulation 4.4
+Lancer hashcat en mode bruteforce avec la bonne configuration, sachant qu’un des
+mots de passe contient des majuscules et des minuscules et a une longueur entre 4 et
+7 caractères. Noter la commande et le résultat obtenu.
+
+### Manipulation 4.5
+Lancer hashcat en mode bruteforce avec la bonne configuration, sachant qu’un des
+mots de passe commence par un signe de ponctuation, puis est suivi de caractères
+alphanumériques (longueur max. 6 caractères). Noter la commande et le résultat
+obtenu.
+
+### Manipulation 4.6
+Un dernier mot de passe peut être trouvé avec le mode bruteforce. A vous de trouver
+le masque et le(s) alphabet(s) adéquats. Noter la commande et le résultat obtenu.
+
+### Manipulation 4.7
+Tester les deux variantes du mode permettant de méler bruteforce et attaque
+par dictionnaire. Utiliser des masques courts et des alphabets simples. Noter les
+commandes et les résultats obtenus.
+
+### Question 4.9
+A quoi servent les "rules" de hashcat ? Avec quel(s) mode(s) les utilise-t-on ? Comment
+fonctionnent-elles ?
+
+### Question 4.10
+Quelles sont les "rules" déjà à disposition ?
+
+### Question 4.11
+Que fait l’ensemble de "rules" définies dans le fichier leetspeak.rule ?
+
+### Manipulation 4.8
+Lancer hashcat en utilisant leetspeak.rule. Noter la commande et le résultat obtenu.
+
+### Question 4.12
+Tous les mots de passe ont-ils été trouvés ? Si non, à votre avis, pourquoi ?
+
+### Manipulation 4.9
+Reporter les mots de passe trouvés avec hashcat dans le tableau en 6.1. Préciser le
+mode d’attaque et les éventuels paramètres supplémentaires sous "méthode".
+
+## 5 « Rainbow tables »
