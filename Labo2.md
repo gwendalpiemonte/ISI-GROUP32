@@ -59,3 +59,15 @@ En considérant des attaques « hors ligne », décrire trois manières de frein
 
 ### Question 2.18
 En considérant des attaques « en ligne », décrire deux manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
+
+
+## Question 2.2
+
+### Question 2.19
+Les mots de passe ne sont pas stockés en clair, pourquoi ?
+
+### Question 2.20
+Les mots de passe ne sont pas stockés en clair, mais pourtant ils ne sont pas chiffrés, pourquoi ?
+
+### Question 2.21
+Sous quelle forme sont stockés les mots de passe ?
