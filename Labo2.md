@@ -50,3 +50,12 @@ Toujours avec la même base, combien de temps faudra-t-il « au maximum » pour 
 
 ### Question 2.16
 Combien de temps faudra-t-il « en moyenne » pour casser un mot de passe de la question 2.12 ?
+
+
+## Question 2.2
+
+### Question 2.17
+En considérant des attaques « hors ligne », décrire trois manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
+
+### Question 2.18
+En considérant des attaques « en ligne », décrire deux manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
