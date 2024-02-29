@@ -61,7 +61,7 @@ En considérant des attaques « hors ligne », décrire trois manières de frein
 En considérant des attaques « en ligne », décrire deux manières de freiner (soit bloquer, soit ralentir) l’attaquant ?
 
 
-## Question 2.2
+## Question 2.3
 
 ### Question 2.19
 Les mots de passe ne sont pas stockés en clair, pourquoi ?
