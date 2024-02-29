@@ -60,26 +60,34 @@ $$
 Entre 0 et 8 caractères alphanumériques (sensible à la casse) ?
 
 $$
-
 \sum_{i = 0}^{8} 62^i 
-
 $$
 
 ### Question 2.11
 Exactement 1 caractère ASCII (7 bits) ?
 
+$$
 2^7
+$$
 
 ### Question 2.12
 Exactement 8 caractères ASCII ?
 
+$$
 8 * 2^7
+$$
 
 ### Question 2.13
 Entre 0 et 8 caractères ASCII ?
 
+$$
+\sum_{i = 0}^{8} 2^{7i} 
+$$
+
 ### Question 2.14
 Combien de temps faudra-t-il « en moyenne » pour casser un mot de passe de la question 2.6 ?
+
+
 
 ### Question 2.15
 
