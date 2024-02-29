@@ -159,3 +159,11 @@ Reporter les mots de passe trouvés avec hashcat dans le tableau en 6.1. Précis
 mode d’attaque et les éventuels paramètres supplémentaires sous "méthode".
 
 ## 5 « Rainbow tables »
+
+### Manipulation 5.1
+Ouvrez le navigateur internet Firefox de votre machine Kali et rendez-vous sur le lien
+http://rainbowtables.it64.com/.
+Sur cette page web, vous pouvez directement copier les hash des mots de passe se
+trouvant dans le fichier XPHash.txt et les tester. Le site va ensuite comparer les
+hash que vous aurez entrés avec leur rainbow table de LMHash et vous retourner un
+résultat le cas échéant.
