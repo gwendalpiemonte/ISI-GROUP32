@@ -167,3 +167,29 @@ Sur cette page web, vous pouvez directement copier les hash des mots de passe se
 trouvant dans le fichier XPHash.txt et les tester. Le site va ensuite comparer les
 hash que vous aurez entrés avec leur rainbow table de LMHash et vous retourner un
 résultat le cas échéant.
+Reportez les mots de passe trouvés dans le tableau en 6.1.
+
+### Question 5.1
+Sous linux, un sel (salt) est ajouté aux mots de passe avant qu’ils soient hachés. Pour
+quelle raison l’utilisation de ce sel rend-elle les attaques au moyen de tables « rainbow
+» inefficaces ?
+
+# 6 Résultats
+
+# 7 Avantages et inconvénients des deux outils
+
+# 8 CrackStation
+
+### Manipulation 8.1
+Utiliser l’utilitaire en ligne https://crackstation.net/ pour récupérer les mots de
+passe.
+
+### Question 8.1
+Quel est l’algorithme utilisé par le site web (victime) pour hasher et stocker les mots
+de passe ?
+
+### Question 8.2
+Quelle est la technique utilisée par CrackStation pour retrouver les mots de passe ?
+
+### Question 8.3
+Pourquoi certaines empreintes ne sont pas retrouvées ? Comment l’expliquer ?
