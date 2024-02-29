@@ -6,8 +6,12 @@
 ### Question 2.1
 Exactement 1 caractère numérique ?
 
+Les caractères numériques allant de 0 à 9, ceux-ci apportent 10 possibilités. De ce fait il y aura 10^1 possibilités.
+
 ### Question 2.2
 Exactement 2 caractères numériques ?
+
+En reprenant la question 2.1, nous pouvons dire qu'il y aura 10^2 possibilités.
 
 ### Question 2.3
 Exactement 6 caractères numériques ?
