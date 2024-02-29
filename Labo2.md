@@ -149,6 +149,8 @@ fonctionnement ainsi que les arguments nécessaires pour utiliser ces modes.
 ### Question 4.3
 Quel est le mode d’attaque par défaut ?
 
+Par défaut, Hashcat utilisera une attaque appropriée en fonction du type de hachage que vous essayez de casser.
+
 ### Manipulation 4.2
 Lancer hashcat avec le mode d’attaque par défaut sur le fichier XPHash.txt, puis sur
 le fichier KALIHash.txt. Noter les commandes et le résultat obtenu.
