@@ -16,26 +16,54 @@ En reprenant la question 2.1, nous pouvons dire qu'il y aura 10^2 possibilités.
 ### Question 2.3
 Exactement 6 caractères numériques ?
 
+En reprenant la question 2.1, nous pouvons dire qu'il y aura 10^6 possibilités.
+
 ### Question 2.4
 Entre 0 et 6 caractères numériques ?
+
+$$
+\sum_{i = 0}^{6} 10^i 
+$$
 
 ### Question 2.5
 Exactement 1 caractère alphanumérique (non sensible à la casse) ?
 
+36 caractères alphanumériques, ce qui fait donc 36 possibilités
+
 ### Question 2.6
 Exactement 8 caractères alphanumériques (non sensible à la casse) ?
+
+$26^8$
 
 ### Question 2.7
 Entre 0 et 8 caractères alphanumériques (non sensible à la casse) ?
 
+$$
+\sum_{i = 0}^{8} 26^i 
+$$
+
 ### Question 2.8
 Exactement 1 caractère alphanumérique (sensible à la casse) ?
+
+$$
+26 \times 2 + 10 = 62
+$$
 
 ### Question 2.9
 Exactement 8 caractères alphanumériques (sensible à la casse) ?
 
+$$
+62^8
+$$
+
 ### Question 2.10
 Entre 0 et 8 caractères alphanumériques (sensible à la casse) ?
+
+$$
+
+\sum_{i = 0}^{8} 62^i 
+
+$$
 
 ### Question 2.11
 Exactement 1 caractère ASCII (7 bits) ?
