@@ -176,7 +176,33 @@ quelle raison l’utilisation de ce sel rend-elle les attaques au moyen de table
 
 # 6 Résultats
 
+### Question 6.1
+Mot de passe Outil Méthode
+Eve
+Mallory
+Alice
+Bob
+Dave
+Carol
+Oscar
+Trudy
+
 # 7 Avantages et inconvénients des deux outils
+
+### Question 7.1
+Remplir le tableau suivant en mettant :
+• « + » pour avantage, tout en justifiant la réponse
+• « - » pour inconvénient, tout en justifiant la réponse
+Hashcat Rainbow tables Explications
+Méthode(s) de
+craquage
+Temps de
+craquage
+Temps de
+préparation avant
+le craquage
+Craquage sur tous
+les OS
 
 # 8 CrackStation
 
