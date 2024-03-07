@@ -132,6 +132,11 @@ Quel est le type d’empreintes contenues dans les deux fichiers mentionnés ci-
 Sur quels arguments basez-vous votre réponse (capture d’écran, explications et
 justifications) ?
 
+Pour le fichier KaliHash.txt, le format ressemble grandement au fichier /etc/shadow de Linux.
+En regardant la documentation de crypt(5) (https://manpages.debian.org/unstable/libcrypt-dev/crypt.5.en.html), il est possible de trouver le format de chaque hash:
+- $1$ indique que les mots de passe sont encryptés à l'aide de `md5crypt`.
+
+Pour le fichier XPHash, comme indiqué dans le cours, les deux hash LM et NTLM sont présents pour chacun des utilisateurs.
 
 
 ## 4 Hashcat
@@ -142,37 +147,89 @@ Extraire le dictionnaire rockyou.txt de l’archive /usr/share/wordlists/rockyou
 ### Question 4.1
 Quelle doit être la valeur de l’option -m pour les deux fichiers ?
 
+`-m 1000 / 3000` pour XPHash.txt
+`-m 500` pour KALIHash.txt
+
 ### Question 4.2
 Quels sont les différents modes d’attaque de hashcat ? Expliquer brièvement leur
 fonctionnement ainsi que les arguments nécessaires pour utiliser ces modes.
+
+  # | Mode
+ ===+======
+  0 | Straight
+  1 | Combination
+  3 | Brute-force
+  6 | Hybrid Wordlist + Mask
+  7 | Hybrid Mask + Wordlist
+  9 | Association
+
+
 
 ### Question 4.3
 Quel est le mode d’attaque par défaut ?
 
 Par défaut, Hashcat utilisera une attaque appropriée en fonction du type de hachage que vous essayez de casser.
 
+`-a 0` (Dictionary)
+
 ### Manipulation 4.2
 Lancer hashcat avec le mode d’attaque par défaut sur le fichier XPHash.txt, puis sur
 le fichier KALIHash.txt. Noter les commandes et le résultat obtenu.
 
+```sh
+$ hashcat -m 1000 XPHash.txt   ../wordlists/rockyou.txt
+82cf6feab03795ff1e1b7e3b43e9764e:funtime
+$ hashcat -m 3000 XPHash.txt   ../wordlists/rockyou.txt
+99194a696e6dede0:JULIETT
+4738b39ea1ebbf44:FUNTIME
+$ hashcat -m 500  KALIHash.txt ../wordlists/rockyou.txt
+$1$iQlQrcnz$qmUTfRdy7A.aEWFbxaCks1:funtime
+```
+
 ### Question 4.4
 Qu’est-ce qu’un masque ? Avec quel(s) mode(s) l’utilise-t-on ?
+
+Mask, and Hybrid modes.
+
 
 ### Question 4.5
 Quels sont les alphabets (charsets) prédéfinis ?
 
+  ? | Charset
+ ===+=========
+  l | abcdefghijklmnopqrstuvwxyz [a-z]
+  u | ABCDEFGHIJKLMNOPQRSTUVWXYZ [A-Z]
+  d | 0123456789                 [0-9]
+  h | 0123456789abcdef           [0-9a-f]
+  H | 0123456789ABCDEF           [0-9A-F]
+  s |  !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+  a | ?l?u?d?s
+  b | 0x00 - 0xff
+
+
 ### Question 4.6
 Quels sont les alphabets et le masque utilisés par défaut pour le bruteforce ?
+
+Guess.Charset....: -1 ?l?d?u, -2 ?l?d, -3 ?l?d*!$@_, -4 Undefined
+Guess.Mask.......: ?1?2?2?2?2 [5]
 
 ### Manipulation 4.3
 Lancer hashcat en mode bruteforce avec la configuration par défaut. Noter la
 commande et le résultat obtenu.
 
+```sh
+hashcat -m 500 -a 3 KALIHash.txt --status -O
+```
+
 ### Question 4.7
 Quelle(s) option(s) permet(tent) de tester différentes longueurs pendant le bruteforce ?
 
+Il suffit de changer le masque utilisé.
+
 ### Question 4.8
 Quelle option permet de définir un nouvel alphabet ?
+
+Il suffit de changer le masque utilisé (avec un argument)
 
 ### Manipulation 4.4
 Lancer hashcat en mode bruteforce avec la bonne configuration, sachant qu’un des
@@ -234,14 +291,14 @@ quelle raison l’utilisation de ce sel rend-elle les attaques au moyen de table
 
 ### Question 6.1
 Mot de passe Outil Méthode
-Eve
-Mallory
-Alice
-Bob
-Dave
-Carol
-Oscar
-Trudy
+Eve | nceipo | hashcat (NTLM, Bruteforce)
+Mallory | JULIETT | hashcat (LN, Wordlist)
+Alice | funtime | hashcat (Unix MD5, Wordlist)
+Bob | 
+Dave | 
+Carol | RDQOM | hashcat (LN, Bruteforce)
+Oscar | 
+Trudy | 9823029 | hashcat (LN, Bruteforce)
 
 # 7 Avantages et inconvénients des deux outils
 
@@ -259,6 +316,7 @@ préparation avant
 le craquage
 Craquage sur tous
 les OS
+
 
 # 8 CrackStation
 

@@ -1,0 +1,9 @@
+eve:$1$4sj69SxM$5Hh9C.gRF7UT17Wz3HIqF/:17053:0:99999:7:::
+mallory:$1$ymwtXJQY$e8tMKmtotzkYLFqKgP/6q0:17053:0:99999:7:::
+alice:$1$iQlQrcnz$qmUTfRdy7A.aEWFbxaCks1:17053:0:99999:7:::
+bob:$1$0N.qY.ZR$3C.cM68sYQMpvRqrli2R60:17053:0:99999:7:::
+dave:$1$a.YWY6/x$wm/D7ev3eS5jC3VbRYjg5.:17053:0:99999:7:::
+carol:$1$5kT6bbgA$k7yAdihlsyqwwqIr3ffsG/:17053:0:99999:7:::
+oscar:$1$HoxVfeez$iyJuR/nnBvUxs8TgvdDhU/:17053:0:99999:7:::
+trudy:$1$HeZRtVDU$sXnJlrlXkp5WijAJ4bswg.:17053:0:99999:7:::
+

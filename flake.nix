@@ -23,8 +23,8 @@ outputs = { self, nixpkgs }:
         default = pkgs.mkShell {
           packages = with pkgs; [ 
             hashcat
+            wget
           ];
-
         };
       });
     };
