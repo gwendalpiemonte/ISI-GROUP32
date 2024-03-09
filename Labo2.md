@@ -236,36 +236,123 @@ Lancer hashcat en mode bruteforce avec la bonne configuration, sachant qu’un d
 mots de passe contient des majuscules et des minuscules et a une longueur entre 4 et
 7 caractères. Noter la commande et le résultat obtenu.
 
+```sh
+hashcat -m 1000 -a 3 ntlm.txt -1 "?l?u" --increment-min=4 --increment-max=7 -i "?1?1?1?1?1?1?1?1" -O
+
+f57300698a5b0b55234837d920eaa3ee:RdQom
+04b365a8953171d1e9decf74feb7ecac:nceipo
+82cf6feab03795ff1e1b7e3b43e9764e:funtime
+```
+
 ### Manipulation 4.5
 Lancer hashcat en mode bruteforce avec la bonne configuration, sachant qu’un des
 mots de passe commence par un signe de ponctuation, puis est suivi de caractères
 alphanumériques (longueur max. 6 caractères). Noter la commande et le résultat
 obtenu.
 
+```sh
+hashcat -m 1000 -a 3 ntlm.txt --potfile-path current-2.potfile -1 "?l?u?d" --increment-min=1 --increment-max=6 -i "?s?1?1?1?1?1?1?1" -O
+
+46599a6541e638a90afba723ad58df81:?xA1W
+```
+
 ### Manipulation 4.6
 Un dernier mot de passe peut être trouvé avec le mode bruteforce. A vous de trouver
 le masque et le(s) alphabet(s) adéquats. Noter la commande et le résultat obtenu.
+
+```sh
+# Pas trouvé...
+```
+
 
 ### Manipulation 4.7
 Tester les deux variantes du mode permettant de méler bruteforce et attaque
 par dictionnaire. Utiliser des masques courts et des alphabets simples. Noter les
 commandes et les résultats obtenus.
 
+```sh
+hashcat -m 1000 -a 6 --potfile-path current-2.potfile ntlm.txt ../wordlists/rockyou.txt "?d?d?d?d" -i
+
+78817779602482e0219a0c97d71dde90:juliette173
+```
+
 ### Question 4.9
 A quoi servent les "rules" de hashcat ? Avec quel(s) mode(s) les utilise-t-on ? Comment
 fonctionnent-elles ?
 
+Les rules permettent d'effectuer une/plusieurs permutations/modifications sur le dictionaire original.
+
 ### Question 4.10
 Quelles sont les "rules" déjà à disposition ?
+
+Si nous nous référons au github de hashcat (https://github.com/hashcat/hashcat/blob/master/rules):
+- Incisive-leetspeak.rule
+- InsidePro-HashManager.rule
+- InsidePro-PasswordsPro.rule
+- T0XlC-insert_00-99_1950-2050_toprules_0_F.rule
+- T0XlC-insert_space_and_special_0_F.rule
+- T0XlC-insert_top_100_passwords_1_G.rule
+- T0XlC.rule
+- T0XlC_3_rule.rule
+- T0XlC_insert_HTML_entities_0_Z.rule
+- T0XlCv2.rule
+- best66.rule
+- combinator.rule
+- d3ad0ne.rule
+- dive.rule
+- generated.rule
+- generated2.rule
+- leetspeak.rule
+- oscommerce.rule
+- rockyou-30000.rule
+- specific.rule
+- stacking58.rule
+- toggles1.rule
+- toggles2.rule
+- toggles3.rule
+- toggles4.rule
+- toggles5.rule
+- top10_2023.rule
+- unix-ninja-leetspeak.rule
 
 ### Question 4.11
 Que fait l’ensemble de "rules" définies dans le fichier leetspeak.rule ?
 
+En prenant le fichier ligne par ligne:
+```txt
+sa4 # change tous les a en 4
+sa@ # change tous les a en @
+sb6 # change tous les b en 6
+sc< # change tous les c en <
+sc{ # change tous les c en {
+se3 # change tous les e en 3
+sg9 # change tous les g en 9
+si1 # change tous les i en 1
+si! # change tous les i en !
+so0 # change tous les o en 0
+sq9 # change tous les q en 9
+ss5 # change tous les s en 5
+ss$ # change tous les s en $
+st7 # change tous les t en 7
+st+ # change tous les t en +
+sx% # change tous les x en %
+```
+
+
 ### Manipulation 4.8
 Lancer hashcat en utilisant leetspeak.rule. Noter la commande et le résultat obtenu.
 
+```sh
+hashcat -m 1000 -a 0 ntlm.txt ../wordlists/rockyou.txt -r leetspeak.rule -O
+
+b295d7dd10b0afe1b6bbce24b74b8663:57r4wb3rry
+```
+
 ### Question 4.12
 Tous les mots de passe ont-ils été trouvés ? Si non, à votre avis, pourquoi ?
+
+Après toutes les tentatives au dessus, il reste un seul mot de passe non trouvé (celui de Bob).
+Il est possible qu'il ait utilisé un mot de passe plus complexe / long, et qu'une méthode de brute-force ne suffit pas a le trouver.
 
 ### Manipulation 4.9
 Reporter les mots de passe trouvés avec hashcat dans le tableau en 6.1. Préciser le
@@ -287,18 +374,20 @@ Sous linux, un sel (salt) est ajouté aux mots de passe avant qu’ils soient ha
 quelle raison l’utilisation de ce sel rend-elle les attaques au moyen de tables « rainbow
 » inefficaces ?
 
+Les rainbow tables précalculent en avance les hashs. Dans le cas de l'ajout d'un sel, les rainbow tables sont totalement inutiles, car aucun mot de passe ne sera trouvé.
+
 # 6 Résultats
 
 ### Question 6.1
 Mot de passe Outil Méthode
 Eve | nceipo | hashcat (NTLM, Bruteforce)
-Mallory | JULIETT | hashcat (LN, Wordlist)
+Mallory | juliette173 | hashcat (LN, Wordlist) -> (NTLM, Hybrid attack)
 Alice | funtime | hashcat (Unix MD5, Wordlist)
-Bob | 
-Dave | 
-Carol | RDQOM | hashcat (LN, Bruteforce)
-Oscar | 
-Trudy | 9823029 | hashcat (LN, Bruteforce)
+Bob | !XS8D?@ | Rainbow table.
+Dave | 57r4wb3rry | hashcat (NTLM, Wordlist + Rule)
+Carol | RdQom | hashcat (LN, Bruteforce)
+Oscar | ?xA1W | hashcat (NTLM, 4.5)
+Trudy | 98230293 | hashcat (LN, Bruteforce) -> (NTLM, Bruteforce number only)
 
 # 7 Avantages et inconvénients des deux outils
 
@@ -306,16 +395,13 @@ Trudy | 9823029 | hashcat (LN, Bruteforce)
 Remplir le tableau suivant en mettant :
 • « + » pour avantage, tout en justifiant la réponse
 • « - » pour inconvénient, tout en justifiant la réponse
-Hashcat Rainbow tables Explications
-Méthode(s) de
-craquage
-Temps de
-craquage
-Temps de
-préparation avant
-le craquage
-Craquage sur tous
-les OS
+
+| x                                      | Hashcat | Rainbow tables | Explications |
+|----------------------------------------|---------|----------------|--------------|
+| Méthode(s) de craquage                 | +       | -              | Hashcat supporte les salts et beaucoup d'autres méthodes |
+| Temps de craquage                      | -       | +              | Les rainbow-tables sont couteuses a produire, mais rendent le temps de craquage extrèmement rapide |
+| Temps de préparation avant le craquage | +       | -              | Les rainbow-tables nécessitent beaucoup de temps de préparation |
+| Craquage sur tous les OS               | +       | -              | Techniquement, les deux outils peuvent être executés sur tous les OS, mais dû à l'utilisation de sel sur Linux, hashcat gagne |
 
 
 # 8 CrackStation
