@@ -414,8 +414,14 @@ passe.
 Quel est l’algorithme utilisé par le site web (victime) pour hasher et stocker les mots
 de passe ?
 
+sha512
+
 ### Question 8.2
 Quelle est la technique utilisée par CrackStation pour retrouver les mots de passe ?
 
+Il utilise une LUT (LookUp Table), qui permet de retrouver en O(log2(n)) un mot de passe à partir de son hash (si bien implémenté)
+
 ### Question 8.3
 Pourquoi certaines empreintes ne sont pas retrouvées ? Comment l’expliquer ?
+
+Il est possible que le mot de passe ne soit pas dans leur wordlist pré-calculée. Cela est commun avec les mots de passe générés aléatoirement.
