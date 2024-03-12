@@ -379,15 +379,16 @@ Les rainbow tables précalculent en avance les hashs. Dans le cas de l'ajout d'u
 # 6 Résultats
 
 ### Question 6.1
-Mot de passe Outil Méthode
-| Eve | nceipo | hashcat (NTLM, Bruteforce)
-| Mallory | juliette173 | hashcat (LN, Wordlist) -> (NTLM, Hybrid attack)
-| Alice | funtime | hashcat (Unix MD5, Wordlist)
-| Bob | !XS8D?@ | Rainbow table.
-| Dave | 57r4wb3rry | hashcat (NTLM, Wordlist + Rule)
-| Carol | RdQom | hashcat (LN, Bruteforce)
-| Oscar | ?xA1W | hashcat (NTLM, 4.5)
-| Trudy | 98230293 | hashcat (LN, Bruteforce) -> (NTLM, Bruteforce number only)
+| Mot de passe | Outil | Méthode |
+|--------------|-------|---------|
+| Eve | nceipo | hashcat (NTLM, Bruteforce) |
+| Mallory | juliette173 | hashcat (LN, Wordlist) -> (NTLM, Hybrid attack) |
+| Alice | funtime | hashcat (Unix MD5, Wordlist) |
+| Bob | !XS8D?@ | Rainbow table. |
+| Dave | 57r4wb3rry | hashcat (NTLM, Wordlist + Rule) |
+| Carol | RdQom | hashcat (LN, Bruteforce) |
+| Oscar | ?xA1W | hashcat (NTLM, 4.5) |
+| Trudy | 98230293 | hashcat (LN, Bruteforce) -> (NTLM, Bruteforce number only) |
 
 # 7 Avantages et inconvénients des deux outils
 
