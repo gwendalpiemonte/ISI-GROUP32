@@ -3,10 +3,34 @@
 ## 2 Les maliciels
 
 ### Question 2.1
-Décrire ce qu’est un maliciel ainsi que ses caractéristiques.
+> Décrire ce qu’est un maliciel ainsi que ses caractéristiques.
+
+Un maliciel est un logiciel se faisant passer comme un outil légitime dans l'objectif d'executer du code malveillant contenu dans l'exécutable.
+
+Ses caractéristiques principales sont:
+- Un hash/taille de fichier/métadonnées qui ne correspond pas au logiciel original
+- Une version du logiciel non fonctionnel (une erreur est survenue)
+- Une signature numérique falsifiée / enlevée
 
 ### Question 2.2
-Quelles sont les différentes catégories et fonctionnalités des maliciels.
+> Quelles sont les différentes catégories et fonctionnalités des maliciels.
+
+Sources : 
+- [Source principale (en anglais)](https://www.crowdstrike.com/cybersecurity-101/malware/types-of-malware/)
+- [Tradutions francaises (tel que recommandé par l'académie francaise)](https://www.academie-francaise.fr/sites/academie-francaise.fr/files/lexique_informatique_et_cybersecurite_2022.pdf)
+
+| Type         | Fonctionnalité |
+|:-------------|:---------------|
+| Ransongiciel | Désactive l'accès de la victime à ses données tant qu'une rançon n'est pas payée. |
+| Maliciel sans fichier | Effectue des modifications dans les fichiers natifs du système d'exploitation |
+| Logiciel espion | Collecte des données d'activité des utilisateurs à leur insu |
+| Publiciels | Affiche des publicités indésirables |
+| Chevaux de Troie | Se déguise en code attrayant |
+| Vers | Se propage à travers un réseau en se répliquant |
+| Source de Programme Malveillant (Rootkit) | Donne aux pirates le contrôle à distance du périphérique de la victime |
+| Enregistreurs de frappe | Surveille les frappes des utilisateurs |
+| Maliciel mobile | Infecte les appareils mobiles |
+| Maliciel effaceur | Efface irrémédiablement les données des utilisateurs. |
 
 ### Question 2.3
 Tenter de trouver des fonctionnalités non données en cours, faire travailler son imagination !
